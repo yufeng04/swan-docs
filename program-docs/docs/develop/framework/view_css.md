@@ -59,6 +59,13 @@ CSS 是描述 SWAN 的样式语言。支持 CSS 的属性。
 <!--在iPhoneX等机型下，该view节点会自动获得一个“padding-bottom:34px”的样式-->
 ```
 
+从 3.150.x 开始我们将同时支持`safe-area-inset-*`的写法，建议使用以下css进行兼容
+
+```css
+padding-bottom: constant(safe-area-inset-bottom);
+padding-bottom: env(safe-area-inset-bottom);
+```
+
 ### 内联样式
 
 内联样式与Web开发一致,且支持动态更新

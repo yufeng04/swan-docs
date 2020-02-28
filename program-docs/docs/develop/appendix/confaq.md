@@ -155,3 +155,28 @@ A: [参见swiper参数](/develop/component/view_swiper/)，可以去 dot 显示�
 #### Q：小程序使用 webview，分享出去的链接能直接是 webview 对应的 url 而不是小程序的 url 么？
 
 A：小程序页面在进行分享时，如果分享出去的是web view引入的H5 页面，只能是分享的小程序的页面路径，不能是原H5 的页面路径。
+
+#### Q：button组件的类型为默认时，无法修改按钮的边框样式
+
+A：为了处理移动端的1px问题，默认类型的button组件在设置边框样式时使用了伪类；开发者可以通过伪类设置样式来覆盖默认的边框样式。
+
+**代码示例：**
+
+<a href="swanide://fragment/d74c7dc49171f4d5ad492627d815f7371582878596304" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a>
+
+
+```swan
+<button type="default" class="btn">
+    按钮 default
+</button>
+```
+
+```css
+.btn {
+    position: absolute;
+    top: 50px;
+}
+.btn:after {
+    border: 1px solid #f00;
+}
+```
